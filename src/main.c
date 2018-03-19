@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include "stage.h"
 
-void automove() {
+void * automove() {
     printStage();
     while (!isGameOver()) {
         system("sleep 0.2");
@@ -13,6 +13,7 @@ void automove() {
         printStage();
         refresh();
     }
+    return NULL;
 }
 
 int main(int argc, const char * argv[]) {
